@@ -1,1 +1,0 @@
-# Tygodniowe-Wyzwanie-Programistyczne
