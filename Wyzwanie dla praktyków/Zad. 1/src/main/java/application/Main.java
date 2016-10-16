@@ -5,7 +5,8 @@ import java.io.PrintWriter;
 
 import model.MessageLevel;
 import service.Logger;
-import service.LoggerFactory;
+import service.LogsToConsole;
+import service.LogsToFile;
 
 public class Main {
     
@@ -19,12 +20,12 @@ public class Main {
         log_1.debug("Logger_1 message to show.", MessageLevel.ERROR);
         log_2.debug("Logger_2 message to show in console.", MessageLevel.INFO);
         log_1.debug("Another Logger_1 message.", MessageLevel.WARN);
-        log_3.debug("Message to file", MessageLevel.ERROR);
+        log_3.debug("Message to file version 2 impl.", MessageLevel.ERROR);
     }
     
     static void init() throws FileNotFoundException{
-        log_1 = new LoggerFactory("Logger_1");
-        log_2 = new LoggerFactory("Logger_2");
-        log_3 = new LoggerFactory("Logger to file", new PrintWriter("logger-file.txt"));
+        log_1 = new LogsToConsole("Logger_1");
+        log_2 = new LogsToConsole("Logger_2");
+        log_3 = new LogsToFile("Logger to file", new PrintWriter("logger-file.txt"));
     }
 }
