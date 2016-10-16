@@ -2,54 +2,32 @@ package model;
 
 import java.sql.Time;
 
-public class LoggerModel {
+public class LoggerModel implements Comparable<LoggerModel> {
 
-    private String name;
+    private final String name;
 
-    private String message;
+    private final String message;
 
-    private MessageLevel level;
+    private final MessageLevel level;
 
-    private Time time;
+    private final Time time;
 
 
-    public LoggerModel(String name) {
+    public LoggerModel(String name, MessageLevel level, String message) {
+        this.time = new Time(System.currentTimeMillis());
         this.name = name;
-    }
-
-
-    public String getMessage() {
-        return message;
-    }
-
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-
-    public MessageLevel getLevel() {
-        return level;
-    }
-
-
-    public void setLevel(MessageLevel level) {
         this.level = level;
-    }
-
-
-    public Time getTime() {
-        return time;
-    }
-
-
-    public void setTime(Time time) {
-        this.time = time;
+        this.message = message;
     }
 
 
     @Override
     public String toString() {
-        return time + " >> " + name + "\t[" + level + "]\t" + message;
+        return time + " >> " + name + "\t[" + level + "]\t" + message + "\n";
+    }
+
+
+    public int compareTo(LoggerModel o) {
+        return this.time.compareTo(o.time);
     }
 }

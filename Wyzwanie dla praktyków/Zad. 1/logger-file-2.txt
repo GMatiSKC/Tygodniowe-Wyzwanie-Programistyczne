@@ -1,0 +1,6 @@
+11:25:44 >> Logger to file	[ERROR]	Message to file version 2 impl.
+11:25:44 >> Logger to file	[ERROR]	Logger_3 test.
+11:25:44 >> Logger to file	[ERROR]	Working.
+11:27:49 >> Logger to file	[ERROR]	Message to file version 2 impl.
+11:27:49 >> Logger to file	[ERROR]	Logger_3 test.
+11:27:49 >> Logger to file	[ERROR]	Working.
